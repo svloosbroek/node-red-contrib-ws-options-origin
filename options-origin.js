@@ -39,7 +39,7 @@ module.exports = function(RED) {
         function startconn() {    // Connect to remote endpoint
             node.tout = null;
             var socket = new ws(node.path, {
-            	origin: "localhost"
+            	origin: node.path
             });	
             socket.setMaxListeners(0);
             node.server = socket; // keep for closing
